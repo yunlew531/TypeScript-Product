@@ -123,7 +123,7 @@ function deleteProduct(id: number) {
     if (product.id === id) {
       productData.splice(idx, 1);
     }
-    renderProduct(productData);
+    filterProducts(null);
   });
 }
 
