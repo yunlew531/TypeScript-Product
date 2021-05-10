@@ -123,8 +123,8 @@ function deleteProduct(id: number) {
     if (product.id === id) {
       productData.splice(idx, 1);
     }
-    filterProducts(null);
   });
+  filterProducts(null);
 }
 
 productList.addEventListener('click', productListListener);

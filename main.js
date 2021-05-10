@@ -75,8 +75,8 @@ function deleteProduct(id) {
         if (product.id === id) {
             productData.splice(idx, 1);
         }
-        renderProduct(productData);
     });
+    filterProducts(null);
 }
 productList.addEventListener('click', productListListener);
 function filterProducts(e) {
