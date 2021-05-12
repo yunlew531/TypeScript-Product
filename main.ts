@@ -49,11 +49,11 @@ function renderProduct(arr: IProductData[]) {
         <td class="py-2 px-3 align-middle">$${product.price}</td>
         <td class="py-2 px-3">
           <label class="flex items-center">
-            <span data-action="changeStatus" data-id="${product.id}"
+            <span data-action="changeStatus"
               class="product-status inline-block bg-gray-200 w-9 h-5 rounded-full
               relative border border-gray-500 border-solid
               group cursor-pointer">
-              <span data-action="changeStatus" data-id="${product.id}"
+              <span data-action="changeStatus"
                 class="product-status block absolute w-3.5 h-3.5
                 ${product.enable ? `bg-green-500 right-1` :
                                    `bg-gray-400 left-1`}
@@ -72,7 +72,7 @@ function renderProduct(arr: IProductData[]) {
                   class="text-red-500 border border-red-500 rounded
                          hover:bg-red-600 duration-200
                          hover:text-white leading-none flex">
-            <span  data-action="deleteProduct" data-id="${product.id}"
+            <span  data-action="deleteProduct"
               class="delete-btn px-0.5 h-full material-icons">delete</span>
           </button>
         </td>
@@ -101,7 +101,7 @@ deleteAllBtn.addEventListener('click', deleteAllProducts);
 
 function productListListener(e: Event) {
   const target = e.target as HTMLElement;
-  const id = parseInt(target.dataset.id);
+  const id = parseInt(target.closest('tr').dataset.id);
   if (target.dataset.action === 'changeStatus') {
     changeStatus(id);
   } else if (target.dataset.action === 'deleteProduct') {
